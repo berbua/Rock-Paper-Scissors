@@ -9,30 +9,46 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  if (computerSelection == "Rock" && playerSelection == "Rock") {
-    return "Remis";
-  } else if (computerSelection == "Rock" && playerSelection == "Paper") {
-    return "You won! Paper beats Rock!";
-  } else if (computerSelection == "Rock" && playerSelection == "Scissors") {
-    return "You loose! Rock beats Scissors!";
+  if (computerSelection == "rock" && playerSelection == "rock") {
+    return "The result is a tie!";
+  } else if (computerSelection == "rock" && playerSelection == "paper") {
+    return "You won! Paper beats rock!";
+  } else if (computerSelection == "rock" && playerSelection == "scissors") {
+    return "You loose! rock beats Scissors!";
   }
-  if (computerSelection == "Paper" && playerSelection === "Rock") {
-    return "You loose! Paper beats Rock!";
-  } else if (computerSelection == "Paper" && playerSelection == "Paper") {
-    return "Remis";
-  } else if (computerSelection == "Paper" && playerSelection == "Scissors") {
-    return "You won! Scissors beats Paper!";
+  if (computerSelection == "paper" && playerSelection === "rock") {
+    return "You loose! Paper beats rock!";
+  } else if (computerSelection == "paper" && playerSelection == "paper") {
+    return "The result is a tie!";
+  } else if (computerSelection == "paper" && playerSelection == "scissors") {
+    return "You won! Scissors beats paper!";
   }
-  if (computerSelection == "Scissors" && playerSelection == "Rock") {
+  if (computerSelection == "scissors" && playerSelection == "rock") {
     return "You won! Rock beats Scissors!";
-  } else if (computerSelection == "Scissors" && playerSelection == "Paper") {
-    return "You loose Scissors beats Paper";
-  } else if (computerSelection == "Scissors" && playerSelection == "Scissors") {
-    return "Remis";
+  } else if (computerSelection == "scissors" && playerSelection == "paper") {
+    return "You loose Scissors beats paper";
+  } else if (computerSelection == "scissors" && playerSelection == "scissors") {
+    return "The result is a tie!";
   }
 }
 
-const playerSelection = prompt("Pick one: Rock, Paper, Scissors");
+const playerSelection = prompt("Pick one: rock, Paper, Scissors");
 const computerSelection = computerPlay();
-console.log("Computer: " + computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+//console.log("Computer: " + computerSelection);
+//console.log(playRound(playerSelection, computerSelection));
+
+// 5 rounds game
+
+function game(playerSelection, computerSelection) {
+  for (i = 1; i < 3; i++) {
+    alert("Round " + i);
+    const playerSelection = prompt("Pick one: Rock, Paper, Scissors");
+    playerSelection.toLowerCase();
+    console.log("Round " + i + " Your choice: " + playerSelection);
+    const computerSelection = computerPlay();
+    console.log("Round " + i + " Computer: " + computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+  }
+}
+
+console.log(game(playerSelection, computerSelection));
