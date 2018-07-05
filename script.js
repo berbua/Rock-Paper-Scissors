@@ -13,7 +13,7 @@ playerSelection = playerSelection.toLowerCase();
 console.log(`Player choice: ${playerSelection}`);*/
 
 //one round
-function playRound(playerSelection, computerSelection) {
+playRound = (playerSelection, computerSelection) => {
   if (playerSelection === computerSelection) {
     return "Game is a tie!";
   }
@@ -38,28 +38,37 @@ function playRound(playerSelection, computerSelection) {
       return "User wins";
     }
   }
-}
+};
 
-const computerSelection = computerPlay();
+//one round result check in console
+/*const computerSelection = computerPlay();
 console.log("Computer selection: " + computerSelection);
 
 const playerSelection = "rock";
 console.log(`User selection: ${playerSelection}`);
 
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection, computerSelection));*/
 
 // 5 rounds game
 
-/*function game(playerSelection, computerSelection) {
+game = (playerSelection, computerSelection) => {
+  playRound(playerSelection, computerSelection);
   for (i = 1; i < 3; i++) {
-    alert("Round " + i);
-    const playerSelection = prompt("Pick one: Rock, Paper, Scissors");
-    playerSelection.toLowerCase();
-    console.log("Round " + i + " Your choice: " + playerSelection);
-    const computerSelection = computerPlay();
+    //inform about the round
+    console.log(`Round  ${i}`);
+    //player selection
+    let playerSelection = prompt("Pick one: Rock, Paper, Scissors");
+    playerSelection = playerSelection.toLowerCase();
+    console.log("Round " + i + " Player choice: " + playerSelection);
+    //computer selection
+    let computerSelection = computerPlay();
     console.log("Round " + i + " Computer: " + computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
+    //one round
+    playRound();
+    console.log(
+      "Round " + i + " Result: " + playRound(playerSelection, computerSelection)
+    );
   }
-}
+};
 
-console.log(game(playerSelection, computerSelection));*/
+game();
