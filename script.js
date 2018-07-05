@@ -7,6 +7,9 @@ const computerPlay = () => {
   let randomItem = items[Math.floor(Math.random() * items.length)];
   return randomItem;
 };
+
+let userScore = 0;
+let computerScore = 0;
 //player choice
 /*let playerSelection = "Rock";
 playerSelection = playerSelection.toLowerCase();
@@ -14,27 +17,41 @@ console.log(`Player choice: ${playerSelection}`);*/
 
 //one round
 playRound = (playerSelection, computerSelection) => {
+  let userScore = 0;
+  let computerScore = 0;
   if (playerSelection === computerSelection) {
     return "Game is a tie!";
   }
   if (playerSelection === "rock") {
     if (computerSelection === "paper") {
+      computerScore++;
+      console.log(computerScore);
       return "Computer wins";
     } else {
+      userScore++;
+      console.log(userScore);
       return "User wins";
     }
   }
   if (playerSelection === "paper") {
     if (computerSelection === "scissors") {
+      computerScore++;
+      console.log(computerScore);
       return "Computer wins";
     } else {
+      userScore++;
+      console.log(userScore);
       return "User wins";
     }
   }
   if (playerSelection === "scissors") {
     if (computerSelection === "rock") {
+      computerScore++;
+      console.log(computerScore);
       return "Computer wins";
     } else {
+      userScore++;
+      console.log(userScore);
       return "User wins";
     }
   }
@@ -66,7 +83,7 @@ game = (playerSelection, computerSelection) => {
     //one round
     playRound();
     console.log(
-      "Round " + i + " Result: " + playRound(playerSelection, computerSelection)
+      `Round ${i} user result: ${userScore} computer result: ${computerScore}`
     );
   }
 };
