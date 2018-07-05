@@ -1,5 +1,3 @@
-console.log("Elczyk mordko, powodzonka");
-
 //one single round
 //compter choice
 let userScore = 0;
