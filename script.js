@@ -72,6 +72,7 @@ game = (playerSelection, computerSelection) => {
     console.log(
       `Result after Round ${i} player result: ${userScore} computer result: ${computerScore} ties: ${ties}`
     );
+    document.getElementById("computer_score").innerHTML = computerScore;
   }
 };
 
