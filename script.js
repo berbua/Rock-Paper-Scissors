@@ -73,51 +73,19 @@ game = (playerSelection, computerSelection) => {
       `Result after Round ${i} player result: ${userScore} computer result: ${computerScore} ties: ${ties}`
     );
     document.getElementById("computer_score").innerHTML = computerScore;
+    document.getElementById("player_score").innerHTML = userScore;
   }
 };
 
-game();
+//game();
 
-/*one round version with return
-
-//one round
-playRound = (playerSelection, computerSelection) => {
-  let userScore = 0;
-  let computerScore = 0;
-  if (playerSelection === computerSelection) {
-    return "Game is a tie!";
-  }
-  if (playerSelection === "rock") {
-    if (computerSelection === "paper") {
-      computerScore++;
-      console.log(computerScore);
-      return "Computer wins";
-    } else {
-      userScore++;
-      console.log(userScore);
-      return "User wins";
-    }
-  }
-  if (playerSelection === "paper") {
-    if (computerSelection === "scissors") {
-      computerScore++;
-      console.log(computerScore);
-      return "Computer wins";
-    } else {
-      userScore++;
-      console.log(userScore);
-      return "User wins";
-    }
-  }
-  if (playerSelection === "scissors") {
-    if (computerSelection === "rock") {
-      computerScore++;
-      console.log(computerScore);
-      return "Computer wins";
-    } else {
-      userScore++;
-      console.log(userScore);
-      return "User wins";
-    }
-  }
-}; */
+//Events for button clicks
+document.getElementById("rock_btn").addEventListener("click", function() {
+  playRound("rock", computerPlay());
+});
+document.getElementById("paper_btn").addEventListener("click", function() {
+  playRound("paper", computerPlay());
+});
+document.getElementById("scissors_btn").addEventListener("click", function() {
+  playRound("scissors", computerPlay());
+});
