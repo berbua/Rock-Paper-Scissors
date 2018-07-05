@@ -4,7 +4,8 @@ console.log("Elczyk mordko, powodzonka");
 //compter choice
 let userScore = 0;
 let computerScore = 0;
-const computerPlay = () => {
+let ties = 0;
+let computerPlay = () => {
   let items = ["rock", "paper", "scissors"];
   let randomItem = items[Math.floor(Math.random() * items.length)];
   return randomItem;
@@ -18,28 +19,24 @@ console.log(`Player choice: ${playerSelection}`);*/
 //one round
 playRound = (playerSelection, computerSelection) => {
   if (playerSelection === computerSelection) {
-    computerScore++;
-    userScore += 1;
-  }
-  if (playerSelection === "rock") {
+    ties++;
+  } else if (playerSelection === "rock") {
     if (computerSelection === "paper") {
-      computerScore += 1;
+      computerScore++;
     } else {
-      userScore += 1;
+      userScore++;
     }
-  }
-  if (playerSelection === "paper") {
+  } else if (playerSelection === "paper") {
     if (computerSelection === "scissors") {
-      computerScore += 1;
+      computerScore++;
     } else {
-      userScore += 1;
+      userScore++;
     }
-  }
-  if (playerSelection === "scissors") {
+  } else if (playerSelection === "scissors") {
     if (computerSelection === "rock") {
-      computerScore += 1;
+      computerScore++;
     } else {
-      userScore += 1;
+      userScore++;
     }
   }
 };
@@ -61,7 +58,8 @@ game = (playerSelection, computerSelection) => {
   playRound(playerSelection, computerSelection);
   userScore = 0;
   computerScore = 0;
-  for (i = 1; i < 3; i++) {
+  ties = 0;
+  for (i = 1; i < 6; i++) {
     //inform about the round
     console.log(`Round  ${i}`);
     //player selection
@@ -72,9 +70,9 @@ game = (playerSelection, computerSelection) => {
     let computerSelection = computerPlay();
     console.log("Round " + i + " Computer: " + computerSelection);
     //one round
-    playRound();
+    playRound(playerSelection, computerSelection);
     console.log(
-      `Round ${i} user result: ${userScore} computer result: ${computerScore}`
+      `Result after Round ${i} player result: ${userScore} computer result: ${computerScore} ties: ${ties}`
     );
   }
 };
