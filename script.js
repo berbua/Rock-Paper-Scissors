@@ -37,6 +37,11 @@ playRound = (playerSelection, computerSelection) => {
       userScore++;
     }
   }
+  console.log(computerScore);
+  console.log(userScore);
+  document.getElementById("computer_score").innerHTML = computerScore;
+  document.getElementById("player_score").innerHTML = userScore;
+  document.getElementById("computer_choice").innerHTML = userScore;
 };
 
 //one round result check in console
