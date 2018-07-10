@@ -3,9 +3,29 @@
 let userScore = 0;
 let computerScore = 0;
 let ties = 0;
+let computerIco = document.getElementById("comp_i");
+
+removeClass = () => {
+  if (computerIco.classList.contains("fa-hand-paper") == true) {
+    computerIco.classList.remove("fa-hand-paper");
+  } else if (computerIco.classList.contains("fa-hand-rock") == true) {
+    computerIco.classList.remove("fa-hand-rock");
+  } else if (computerIco.classList.contains("fa-hand-scissors") == true) {
+    computerIco.classList.remove("fa-hand-scissors");
+  }
+};
+
 let computerPlay = () => {
+  removeClass();
   let items = ["rock", "paper", "scissors"];
   let randomItem = items[Math.floor(Math.random() * items.length)];
+  if (randomItem === "paper") {
+    computerIco.classList.add("fa-hand-paper");
+  } else if (randomItem === "rock") {
+    computerIco.classList.add("fa-hand-rock");
+  } else if (randomItem === "scissors") {
+    computerIco.classList.add("fa-hand-scissors");
+  }
   return randomItem;
 };
 
@@ -37,7 +57,31 @@ playRound = (playerSelection, computerSelection) => {
       userScore++;
     }
   }
+  console.log(computerPlay());
+  console.log(computerScore);
+  console.log(userScore);
+  document.getElementById("computer_score").innerHTML = computerScore;
+  document.getElementById("player_score").innerHTML = userScore;
 };
+
+//Events for button clicks
+document.getElementById("rock_btn").addEventListener("click", function() {
+  playRound("rock", computerPlay());
+});
+document.getElementById("paper_btn").addEventListener("click", function() {
+  playRound("paper", computerPlay());
+});
+document.getElementById("scissors_btn").addEventListener("click", function() {
+  playRound("scissors", computerPlay());
+});
+
+document.getElementById("reset").addEventListener("click", function() {
+  userScore = 0;
+  document.getElementById("player_score").innerHTML = userScore;
+  computerScore = 0;
+  document.getElementById("computer_score").innerHTML = computerScore;
+  removeClass();
+});
 
 //one round result check in console
 /*const computerSelection = computerPlay();
@@ -52,7 +96,7 @@ console.log(`Computer score: ${computerScore}`);*/
 
 // 5 rounds game
 
-game = (playerSelection, computerSelection) => {
+/*game = (playerSelection, computerSelection) => {
   playRound(playerSelection, computerSelection);
   userScore = 0;
   computerScore = 0;
@@ -72,51 +116,9 @@ game = (playerSelection, computerSelection) => {
     console.log(
       `Result after Round ${i} player result: ${userScore} computer result: ${computerScore} ties: ${ties}`
     );
+    document.getElementById("computer_score").innerHTML = computerScore;
+    document.getElementById("player_score").innerHTML = userScore;
   }
-};
+};*/
 
-game();
-
-/*one round version with return
-
-//one round
-playRound = (playerSelection, computerSelection) => {
-  let userScore = 0;
-  let computerScore = 0;
-  if (playerSelection === computerSelection) {
-    return "Game is a tie!";
-  }
-  if (playerSelection === "rock") {
-    if (computerSelection === "paper") {
-      computerScore++;
-      console.log(computerScore);
-      return "Computer wins";
-    } else {
-      userScore++;
-      console.log(userScore);
-      return "User wins";
-    }
-  }
-  if (playerSelection === "paper") {
-    if (computerSelection === "scissors") {
-      computerScore++;
-      console.log(computerScore);
-      return "Computer wins";
-    } else {
-      userScore++;
-      console.log(userScore);
-      return "User wins";
-    }
-  }
-  if (playerSelection === "scissors") {
-    if (computerSelection === "rock") {
-      computerScore++;
-      console.log(computerScore);
-      return "Computer wins";
-    } else {
-      userScore++;
-      console.log(userScore);
-      return "User wins";
-    }
-  }
-}; */
+//game();
