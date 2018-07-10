@@ -51,3 +51,14 @@ button {
 .scoreboard i {
   font-size: 3em;
 }
+
+#reset {
+  width: 25%;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+footer span {
+  font-size: 0.7em;
+}

@@ -64,6 +64,25 @@ playRound = (playerSelection, computerSelection) => {
   document.getElementById("player_score").innerHTML = userScore;
 };
 
+//Events for button clicks
+document.getElementById("rock_btn").addEventListener("click", function() {
+  playRound("rock", computerPlay());
+});
+document.getElementById("paper_btn").addEventListener("click", function() {
+  playRound("paper", computerPlay());
+});
+document.getElementById("scissors_btn").addEventListener("click", function() {
+  playRound("scissors", computerPlay());
+});
+
+document.getElementById("reset").addEventListener("click", function() {
+  userScore = 0;
+  document.getElementById("player_score").innerHTML = userScore;
+  computerScore = 0;
+  document.getElementById("computer_score").innerHTML = computerScore;
+  removeClass();
+});
+
 //one round result check in console
 /*const computerSelection = computerPlay();
 console.log("Computer selection: " + computerSelection);
@@ -103,14 +122,3 @@ console.log(`Computer score: ${computerScore}`);*/
 };*/
 
 //game();
-
-//Events for button clicks
-document.getElementById("rock_btn").addEventListener("click", function() {
-  playRound("rock", computerPlay());
-});
-document.getElementById("paper_btn").addEventListener("click", function() {
-  playRound("paper", computerPlay());
-});
-document.getElementById("scissors_btn").addEventListener("click", function() {
-  playRound("scissors", computerPlay());
-});
