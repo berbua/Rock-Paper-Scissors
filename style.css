@@ -34,26 +34,20 @@ button {
   font-size: 2em;
 }
 
-.computer_choice {
+.comp_choice_div {
   width: 100px;
   height: 100px;
 }
 
-.computer_choice_paper {
-  background: url(img/hand-paper-regular.svg);
-}
-.computer_choice_rock {
-  background: url(img/hand-rock-regular.svg);
-}
-.computer_choice_scissors {
-  background: url(img/hand-scissors-regular.svg);
-}
-
 .scoreboard {
   width: 100%;
-  height: 80px;
+  height: 150px;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: space-around;
+}
+
+.scoreboard i {
+  font-size: 3em;
 }

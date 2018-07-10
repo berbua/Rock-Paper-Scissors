@@ -3,9 +3,29 @@
 let userScore = 0;
 let computerScore = 0;
 let ties = 0;
+let computerIco = document.getElementById("comp_i");
+
+removeClass = () => {
+  if (computerIco.classList.contains("fa-hand-paper") == true) {
+    computerIco.classList.remove("fa-hand-paper");
+  } else if (computerIco.classList.contains("fa-hand-rock") == true) {
+    computerIco.classList.remove("fa-hand-rock");
+  } else if (computerIco.classList.contains("fa-hand-scissors") == true) {
+    computerIco.classList.remove("fa-hand-scissors");
+  }
+};
+
 let computerPlay = () => {
+  removeClass();
   let items = ["rock", "paper", "scissors"];
   let randomItem = items[Math.floor(Math.random() * items.length)];
+  if (randomItem === "paper") {
+    computerIco.classList.add("fa-hand-paper");
+  } else if (randomItem === "rock") {
+    computerIco.classList.add("fa-hand-rock");
+  } else if (randomItem === "scissors") {
+    computerIco.classList.add("fa-hand-scissors");
+  }
   return randomItem;
 };
 
@@ -37,11 +57,11 @@ playRound = (playerSelection, computerSelection) => {
       userScore++;
     }
   }
+  console.log(computerPlay());
   console.log(computerScore);
   console.log(userScore);
   document.getElementById("computer_score").innerHTML = computerScore;
   document.getElementById("player_score").innerHTML = userScore;
-  document.getElementById("computer_choice").innerHTML = userScore;
 };
 
 //one round result check in console
@@ -57,7 +77,7 @@ console.log(`Computer score: ${computerScore}`);*/
 
 // 5 rounds game
 
-game = (playerSelection, computerSelection) => {
+/*game = (playerSelection, computerSelection) => {
   playRound(playerSelection, computerSelection);
   userScore = 0;
   computerScore = 0;
@@ -80,7 +100,7 @@ game = (playerSelection, computerSelection) => {
     document.getElementById("computer_score").innerHTML = computerScore;
     document.getElementById("player_score").innerHTML = userScore;
   }
-};
+};*/
 
 //game();
 
