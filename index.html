@@ -17,13 +17,13 @@
         </header>
         <main>
             <section class="buttons">
-                <button class="paper_btn">
+                <button id="paper_btn">
                     <i class="far fa-hand-paper"></i>
                 </button>
-                <button class="rock_btn">
+                <button id="rock_btn">
                     <i class="far fa-hand-rock"></i>
                 </button>
-                <button class="scissors_btn">
+                <button id="scissors_btn">
                     <i class="far fa-hand-scissors"></i>
                 </button>
             </section>
@@ -34,17 +34,22 @@
                 </div>
                 <div>
                     <h3>Computer choice:</h3>
-                    <div id="computer_choice"></div>
+                    <div id="comp_choice_div">
+                        <i id="comp_i" class="far"></i>
+                    </div>
                 </div>
                 <div>
                     <h3>Computer:</h3>
                     <span id="computer_score">0</span>
                 </div>
             </section>
-            <footer>
-                <h2>Click here to reset</h2>
-            </footer>
+
         </main>
+        <footer>
+            <button id="reset">
+                <span>Click here to reset</span>
+            </button>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
