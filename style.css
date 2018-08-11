@@ -54,10 +54,21 @@ h2 {
   height: 100px;
 }
 
+.comp_choice_div {
+  width: 100px;
+  height: 100px;
+}
+
 .scoreboard {
+<<<<<<< HEAD
   width: 80%;
   height: 120px;
   margin: 0 auto;
+=======
+  width: 100%;
+  height: 150px;
+  margin: 0;
+>>>>>>> d07c4718ca0f4b5c369f9b63dc761881541b2989
   padding: 0;
   display: flex;
   justify-content: space-around;
@@ -67,6 +78,7 @@ h2 {
   font-size: 3em;
 }
 
+<<<<<<< HEAD
 .reset-btn {
   width: 25%;
   height: 1.7em;
@@ -76,6 +88,13 @@ h2 {
   border-radius: 10px;
   border: none;
   cursor: pointer;
+=======
+#reset {
+  width: 25%;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0;
+>>>>>>> d07c4718ca0f4b5c369f9b63dc761881541b2989
 }
 
 footer span {
