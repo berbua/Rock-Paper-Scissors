@@ -1,4 +1,2 @@
-﻿# Rock-Paper-Scissors
- 
- Project from The Odin Project 
-https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors?ref=lnav
+This project is part of my work during completion of The Odin Project
+https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors 
