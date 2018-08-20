@@ -3,6 +3,10 @@ A simple implementation of grade-school classic “rock paper scissors” game f
 
 The first part of the project was to write the game to be played in the console. Afterwards the UI has been added.
 
-Technologies Used: HTML5, CSS3, Javascript.
-
 <a href="https://berbua.github.io/Rock-Paper-Scissors/"> View in browser </a>
+
+## Technologies used:
+
+- HTML5,
+- CSS3,
+- JavaScript.
